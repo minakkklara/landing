@@ -3,11 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Портфолио — плейсхолдер</title>
+<title>Клара Минак — портфолио</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <p style="padding:40px;font-family:sans-serif">Каркас в разработке — контент будет добавлен после получения данных.</p>
-  <script src="script.js"></script>
+
+<div class="lang-switch">
+  <button type="button" data-lang="ru" class="active">RU</button>
+  <button type="button" data-lang="en">EN</button>
+</div>
+
+<div class="hub-wrap">
+
+  <div class="identity" data-lang-content="ru">
+    <h1>Клара Минак</h1>
+    <p class="contacts">
+      Telegram: <a href="https://t.me/klaraminak">@klaraminak</a>
+      &nbsp;·&nbsp;
+      Почта: <a href="mailto:minak.klara@gmail.com">minak.klara@gmail.com</a>
+    </p>
+  </div>
+  <div class="identity" data-lang-content="en" hidden>
+    <h1>Klara Minak</h1>
+    <p class="contacts">
+      Telegram: <a href="https://t.me/klaraminak">@klaraminak</a>
+      &nbsp;·&nbsp;
+      Email: <a href="mailto:minak.klara@gmail.com">minak.klara@gmail.com</a>
+    </p>
+  </div>
+
+  <nav class="role-links" data-lang-content="ru">
+    <a class="role-card" href="techwriter-ru.html">
+      Технический писатель
+      <span class="sub">резюме, навыки, кейсы</span>
+    </a>
+    <a class="role-card" href="product-ru.html">
+      Product-менеджер
+      <span class="sub">резюме, навыки, кейсы</span>
+    </a>
+  </nav>
+  <nav class="role-links" data-lang-content="en" hidden>
+    <a class="role-card" href="techwriter-en.html">
+      Technical Writer
+      <span class="sub">CV, skills, case studies</span>
+    </a>
+    <a class="role-card" href="product-en.html">
+      Product Manager
+      <span class="sub">CV, skills, case studies</span>
+    </a>
+  </nav>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
