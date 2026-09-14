@@ -106,6 +106,15 @@ section > h2 {
   color: #fff;
 }
 
+.avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--surface);
+}
+
 .identity h1 { margin-bottom: 6px; }
 .identity .contacts { color: var(--text-muted); font-size: .95rem; }
 
