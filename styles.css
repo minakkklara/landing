@@ -323,11 +323,11 @@ section > h2 {
 }
 
 .stats-grid.stats-grid-secondary {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-top: 20px;
 }
 
-/* Featured "completed projects" metric: big number + compact project tags */
+/* Featured metrics (completed projects, skills acquired): big number + compact tag list */
 .metric-featured {
   display: flex;
   align-items: center;
@@ -335,6 +335,7 @@ section > h2 {
   background: var(--accent-soft);
   border-radius: var(--radius-card);
   padding: 28px 30px;
+  margin-bottom: 20px;
 }
 .metric-featured-number {
   flex: 0 0 auto;
