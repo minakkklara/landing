@@ -1,28 +1,61 @@
+/*
+  Style system adapted from the "Seline Analytics" reference:
+  warm stone canvas, flat white cards with hairline borders,
+  one cyan accent, pill-shaped controls, Inter Tight display type.
+*/
+
 :root {
-  --bg: #fafaf9;
-  --surface: #ffffff;
-  --text: #1c1c1e;
-  --text-muted: #5b5b60;
-  --accent: #6046ff;
-  --accent-soft: #efeaff;
-  --border: #e6e4e1;
-  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+  --bg: #fafaf9;            /* stone canvas */
+  --surface: #ffffff;       /* pure white */
+  --border: #e8e6e5;        /* stone border */
+  --border-muted: #d6d3d1;  /* stone muted */
+  --text: #0c0a09;          /* ink black */
+  --text-muted: #78716c;    /* warm gray */
+  --text-faint: #a8a29e;    /* ash gray */
+  --accent: #3ba6f1;        /* cyan signal */
+  --accent-edge: #3398e1;   /* cyan edge */
+  --accent-soft: #c1e1f7;   /* sky wash */
+  --accent-ink: #ffffff;    /* text on filled accent */
+
+  --shadow-card: 0 4px 16px rgba(0,0,0,0.05);
+  --shadow-elevated: 0 12px 45px rgba(17,12,46,0.12);
+  --shadow-subtle: 0 1px 2px rgba(0,0,0,0.05);
+
+  --radius-card: 10px;
+  --radius-feature: 16px;
+  --radius-pill: 9999px;
+
   --placeholder: #b3560a;
   --placeholder-bg: #fff4e8;
-  --radius: 14px;
+
+  --font-display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
   --maxw: 880px;
+
+  /* legacy aliases kept for any untouched rule below */
+  --radius: var(--radius-card);
+  --shadow: var(--shadow-card);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #16161a;
-    --surface: #1f1f24;
-    --text: #f1f0ee;
-    --text-muted: #a5a3ab;
-    --accent: #a496ff;
-    --accent-soft: #2b2440;
-    --border: #34333a;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    --bg: #1c1917;             /* soot canvas */
+    --surface: #262220;        /* dark card surface */
+    --border: #3a3532;
+    --border-muted: #4a443f;
+    --text: #fafaf9;
+    --text-muted: #a8a29e;
+    --text-faint: #78716c;
+    --accent: #3ba6f1;
+    --accent-edge: #5db8f5;
+    --accent-soft: rgba(59, 166, 241, 0.16);
+    --accent-ink: #0c0a09;
+
+    --shadow-card: 0 4px 16px rgba(0,0,0,0.35);
+    --shadow-elevated: 0 12px 45px rgba(0,0,0,0.5);
+    --shadow-subtle: 0 1px 2px rgba(0,0,0,0.4);
+
     --placeholder: #ffb066;
     --placeholder-bg: #3a2a17;
   }
@@ -35,15 +68,23 @@ body {
   padding: 0 20px;
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.64;
 }
 
-a { color: var(--accent); text-decoration: none; }
+a { color: var(--accent-edge); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .5em; }
-h1 { font-size: 2rem; }
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0 0 .5em;
+  color: var(--text);
+}
+h1 { font-size: 2rem; letter-spacing: -0.02em; }
 h2 { font-size: 1.5rem; margin-top: 0; }
 h3 { font-size: 1.1rem; }
 
@@ -56,7 +97,7 @@ main, .hub-wrap {
 section { margin-top: 56px; }
 section > h2 {
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 /* ---------- Placeholder marker ---------- */
@@ -87,23 +128,24 @@ section > h2 {
   gap: 6px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   padding: 4px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-subtle);
 }
 .lang-switch button {
   border: none;
   background: transparent;
   color: var(--text-muted);
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 500;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   font-size: .85rem;
 }
 .lang-switch button.active {
   background: var(--accent);
-  color: #fff;
+  color: var(--accent-ink);
 }
 
 .avatar {
@@ -111,7 +153,7 @@ section > h2 {
   height: 128px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-elevated);
   border: 3px solid var(--surface);
 }
 
@@ -127,12 +169,13 @@ section > h2 {
 .role-card {
   display: block;
   padding: 22px 34px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-feature);
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-card);
+  font-family: var(--font-display);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text);
   transition: transform .15s ease, border-color .15s ease;
 }
@@ -144,6 +187,7 @@ section > h2 {
 .role-card span.sub {
   display: block;
   margin-top: 4px;
+  font-family: var(--font-body);
   font-size: .8rem;
   font-weight: 400;
   color: var(--text-muted);
@@ -168,21 +212,22 @@ section > h2 {
   font-size: .95rem;
 }
 .cv-header .identity .home-link {
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 400;
   color: var(--text);
 }
 .cv-header .contacts { color: var(--text-muted); margin-left: 8px; }
 .switchers { display: flex; gap: 14px; flex-wrap: wrap; font-size: .85rem; }
-.switchers .group { display: flex; gap: 8px; border: 1px solid var(--border); border-radius: 999px; padding: 4px; background: var(--surface); }
-.switchers .group a { padding: 4px 12px; border-radius: 999px; color: var(--text-muted); font-weight: 600; }
-.switchers .group a.active { background: var(--accent); color: #fff; }
+.switchers .group { display: flex; gap: 8px; border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 4px; background: var(--surface); }
+.switchers .group a { padding: 4px 12px; border-radius: var(--radius-pill); color: var(--text-muted); font-weight: 500; }
+.switchers .group a.active { background: var(--accent); color: var(--accent-ink); }
 
 .role-title {
   max-width: var(--maxw);
   margin: 28px auto 0;
 }
-.role-title h1 { font-size: 1.8rem; }
-.role-title p { color: var(--text-muted); margin: 0; }
+.role-title h1 { font-size: 2rem; letter-spacing: -0.025em; }
+.role-title p { color: var(--text-muted); margin: 0; font-size: 1.05rem; }
 
 /* ---------- Skills ---------- */
 .skills-grid {
@@ -193,10 +238,11 @@ section > h2 {
 .skill-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
   padding: 20px 22px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-card);
 }
+.skill-card h3 { color: var(--text); }
 .skill-card ul { margin: 0; padding-left: 20px; }
 .skill-card li { margin-bottom: 4px; }
 
@@ -204,13 +250,13 @@ section > h2 {
 .case-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
   padding: 22px 24px;
   margin-bottom: 18px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-card);
 }
 .case-card dl { margin: 12px 0 0; }
-.case-card dt { font-weight: 700; color: var(--accent); margin-top: 10px; }
+.case-card dt { font-weight: 600; color: var(--accent-edge); margin-top: 10px; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
 .case-card dd { margin: 4px 0 0; }
 
 /* ---------- Metrics ---------- */
@@ -222,14 +268,16 @@ section > h2 {
 }
 .stat {
   background: var(--accent-soft);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
   padding: 24px 12px;
 }
 .stat-number {
   display: block;
+  font-family: var(--font-display);
   font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--accent);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--accent-edge);
 }
 .stat-label {
   display: block;
@@ -241,10 +289,11 @@ section > h2 {
 /* ---------- AI section ---------- */
 .ai-intro {
   background: var(--accent-soft);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
   padding: 18px 22px;
   margin-bottom: 20px;
 }
+.ai-intro strong { color: var(--accent-edge); }
 .ai-examples-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -253,27 +302,30 @@ section > h2 {
 .ai-example {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
   padding: 18px 20px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-card);
 }
 .ai-example .tag {
   display: inline-block;
   font-size: .75rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .04em;
-  color: var(--accent);
+  color: var(--accent-edge);
   margin-bottom: 6px;
+  background: var(--accent-soft);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
 }
 
 /* ---------- Salary ---------- */
 .salary-box {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
   padding: 24px 26px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-card);
 }
 .salary-box table {
   width: 100%;
