@@ -288,9 +288,10 @@ section > h2 {
   margin-bottom: 18px;
   box-shadow: var(--shadow-card);
 }
-.case-card dl { margin: 12px 0 0; }
-.case-card dt { font-weight: 600; color: var(--accent-edge); margin-top: 10px; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
-.case-card dd { margin: 4px 0 0; }
+.case-card dl, .ai-example dl { margin: 12px 0 0; }
+.case-card dt, .ai-example dt { font-weight: 600; color: var(--accent-edge); margin-top: 10px; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+.case-card dd, .ai-example dd { margin: 4px 0 0; }
+.ai-example dl { margin-top: 10px; }
 
 /* ---------- Metrics ---------- */
 .stats-grid {
