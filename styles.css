@@ -240,7 +240,7 @@ section > h2 {
   position: sticky;
   top: 32px;
   flex: 0 0 140px;
-  padding-top: 48px;
+  padding-top: 140px;
 }
 .toc nav {
   display: flex;
