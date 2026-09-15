@@ -291,6 +291,69 @@ section > h2 {
 .case-card dl, .ai-example dl { margin: 12px 0 0; }
 .case-card dt, .ai-example dt { font-weight: 600; color: var(--accent-edge); margin-top: 10px; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
 .case-card dd, .ai-example dd { margin: 4px 0 0; }
+
+/* ---------- Carousel (used for the case-studies block) ---------- */
+.carousel {
+  position: relative;
+}
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track .case-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  margin-bottom: 0;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.carousel-arrow:hover { border-color: var(--accent); color: var(--accent-edge); }
+.carousel-arrow-prev { left: -18px; }
+.carousel-arrow-next { right: -18px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border-muted);
+  cursor: pointer;
+  padding: 0;
+}
+.carousel-dot.active { background: var(--accent); }
+
+@media (max-width: 640px) {
+  .carousel-arrow { display: none; }
+}
 .ai-example dl { margin-top: 10px; }
 .ai-example dt { margin-top: 20px; }
 .ai-example dt:first-child { margin-top: 0; }

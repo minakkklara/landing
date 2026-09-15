@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -63,40 +63,51 @@
   <section id="cases">
     <h2>Case Studies</h2>
 
-    <div class="case-card">
-      <h3>Automating release notes</h3>
-      <dl>
-        <dt>Problem</dt>
-        <dd>Release notes were compiled manually, so some key features got lost in the flow of shipped updates and users didn't learn about important product changes.</dd>
-        <dt>Solution</dt>
-        <dd>By configuring components in Jira, the release notes export was automated and all shipped features were split into blocks, which made working with update information much simpler.</dd>
-        <dt>Result</dt>
-        <dd>Compiling release notes went from 2 hours down to 2 minutes. This freed up the technical writer's time and improved the quality of feature write-ups before publication.</dd>
-      </dl>
-    </div>
+    <div class="carousel">
+      <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous case study">‹</button>
+      <div class="carousel-track">
+        <div class="case-card">
+          <h3>Automating release notes</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Release notes were compiled manually, so some key features got lost in the flow of shipped updates and users didn't learn about important product changes.</dd>
+            <dt>Solution</dt>
+            <dd>By configuring components in Jira, the release notes export was automated and all shipped features were split into blocks, which made working with update information much simpler.</dd>
+            <dt>Result</dt>
+            <dd>Compiling release notes went from 2 hours down to 2 minutes. This freed up the technical writer's time and improved the quality of feature write-ups before publication.</dd>
+          </dl>
+        </div>
 
-    <div class="case-card">
-      <h3>Payments guide development</h3>
-      <dl>
-        <dt>Problem</dt>
-        <dd>Information about payment processing in mobile apps was scattered across different sections of the documentation. Developers had no unified picture of payment integration, creating paid products and subscriptions, or connecting the API.</dd>
-        <dt>Solution</dt>
-        <dd>The solution was creating a single page with a <a href="https://www.rustore.ru/help/en/guides/payments">payment usage scenario</a>: from enabling monetization in mobile apps to configuring the API and test payments.</dd>
-        <dt>Result</dt>
-        <dd>This improved the developer experience and reduced the number of support requests.</dd>
-      </dl>
-    </div>
+        <div class="case-card">
+          <h3>Payments guide development</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>Information about payment processing in mobile apps was scattered across different sections of the documentation. Developers had no unified picture of payment integration, creating paid products and subscriptions, or connecting the API.</dd>
+            <dt>Solution</dt>
+            <dd>The solution was creating a single page with a <a href="https://www.rustore.ru/help/en/guides/payments">payment usage scenario</a>: from enabling monetization in mobile apps to configuring the API and test payments.</dd>
+            <dt>Result</dt>
+            <dd>This improved the developer experience and reduced the number of support requests.</dd>
+          </dl>
+        </div>
 
-    <div class="case-card">
-      <h3>Migrating to Docusaurus</h3>
-      <dl>
-        <dt>Problem</dt>
-        <dd>At the start of the RuStore project, documentation was maintained in a standard CMS, which severely limited what technical writers could do. In particular, inserting code samples was a problem — code examples didn't always look good in the layout, and developers found it hard to apply them in practice.</dd>
-        <dt>Solution</dt>
-        <dd>To fix this, the entire documentation was migrated to Docusaurus, enabling instructions to be written using Markdown.</dd>
-        <dt>Result</dt>
-        <dd>This not only improved the look of the text and code sample blocks, but also made it possible to involve other RuStore teams in creating documentation.</dd>
-      </dl>
+        <div class="case-card">
+          <h3>Migrating to Docusaurus</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd>At the start of the RuStore project, documentation was maintained in a standard CMS, which severely limited what technical writers could do. In particular, inserting code samples was a problem — code examples didn't always look good in the layout, and developers found it hard to apply them in practice.</dd>
+            <dt>Solution</dt>
+            <dd>To fix this, the entire documentation was migrated to Docusaurus, enabling instructions to be written using Markdown.</dd>
+            <dt>Result</dt>
+            <dd>This not only improved the look of the text and code sample blocks, but also made it possible to involve other RuStore teams in creating documentation.</dd>
+          </dl>
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next case study">›</button>
+    </div>
+    <div class="carousel-dots">
+      <button class="carousel-dot active" aria-label="Case study 1"></button>
+      <button class="carousel-dot" aria-label="Case study 2"></button>
+      <button class="carousel-dot" aria-label="Case study 3"></button>
     </div>
 
   </section>
@@ -185,9 +196,9 @@
     <h2>Expected Salary</h2>
     <div class="salary-box">
       <ul class="salary-list">
-        <li>Full-time — <span class="ph">[$X,XXX–X,XXX / €X,XXX–X,XXX]</span> gross</li>
-        <li>Part-time — <span class="ph">[$X,XXX / €X,XXX]</span> gross</li>
-        <li>One-off project — <span class="ph">[from $X,XXX / €X,XXX]</span> gross, depending on scope</li>
+        <li>Full-time — €2,000 gross</li>
+        <li>Part-time — €1,300 gross</li>
+        <li>One-off project — from €500 gross, depending on scope</li>
       </ul>
     </div>
   </section>
@@ -211,5 +222,6 @@
   <p>Klara Minak · Technical Writer</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
