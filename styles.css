@@ -322,12 +322,7 @@ section > h2 {
   margin-top: 4px;
 }
 
-.stats-grid.stats-grid-secondary {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-top: 20px;
-}
-
-/* Featured metrics (completed projects, skills acquired): big number + compact tag list */
+/* Featured metrics (completed projects, skills acquired, application areas): big number + compact tag list */
 .metric-featured {
   display: flex;
   align-items: center;
@@ -380,7 +375,6 @@ section > h2 {
     padding-top: 18px;
     border-top: 1px solid var(--border-muted);
   }
-  .stats-grid.stats-grid-secondary { grid-template-columns: 1fr; }
 }
 
 /* ---------- AI section ---------- */
