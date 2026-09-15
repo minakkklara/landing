@@ -227,8 +227,8 @@ section > h2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
-  max-width: calc(var(--maxw) + 220px);
+  gap: 32px;
+  max-width: calc(var(--maxw) + 190px);
   margin: 0 auto;
 }
 .page-body main {
@@ -239,7 +239,7 @@ section > h2 {
 .toc {
   position: sticky;
   top: 32px;
-  flex: 0 0 160px;
+  flex: 0 0 140px;
   padding-top: 48px;
 }
 .toc nav {
@@ -251,7 +251,7 @@ section > h2 {
 .toc a { color: var(--text-muted); }
 .toc a:hover { color: var(--accent-edge); text-decoration: none; }
 
-@media (max-width: 1150px) {
+@media (max-width: 700px) {
   .toc { display: none; }
 }
 
