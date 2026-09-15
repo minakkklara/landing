@@ -288,6 +288,14 @@ section > h2 {
 }
 .salary-box th { color: var(--text-muted); font-weight: 600; }
 
+.salary-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 1.05rem;
+}
+.salary-list li { margin-bottom: 10px; }
+.salary-list li:last-child { margin-bottom: 0; }
+
 footer.page-footer {
   max-width: var(--maxw);
   margin: 40px auto 20px;
