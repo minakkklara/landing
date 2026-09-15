@@ -292,6 +292,8 @@ section > h2 {
 .case-card dt, .ai-example dt { font-weight: 600; color: var(--accent-edge); margin-top: 10px; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
 .case-card dd, .ai-example dd { margin: 4px 0 0; }
 .ai-example dl { margin-top: 10px; }
+.ai-example dt { margin-top: 20px; }
+.ai-example dt:first-child { margin-top: 0; }
 
 /* ---------- Metrics ---------- */
 .stats-grid {
