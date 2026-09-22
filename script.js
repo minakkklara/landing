@@ -136,3 +136,30 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape" && !overlay.hidden) closeLightbox();
   });
 });
+
+// Horizontal career timeline (About page): click a point, or use the
+// prev/next buttons, to make it the "active" (enlarged) one.
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".career-timeline").forEach(function (timeline) {
+    var points = Array.prototype.slice.call(timeline.querySelectorAll(".career-point"));
+    if (!points.length) return;
+    var prevBtn = timeline.querySelector(".career-nav-prev");
+    var nextBtn = timeline.querySelector(".career-nav-next");
+    var activeIndex = points.findIndex(function (p) { return p.classList.contains("active"); });
+    if (activeIndex < 0) activeIndex = 0;
+
+    function setActive(index) {
+      index = Math.max(0, Math.min(points.length - 1, index));
+      activeIndex = index;
+      points.forEach(function (p, i) {
+        p.classList.toggle("active", i === index);
+      });
+    }
+
+    points.forEach(function (p, i) {
+      p.addEventListener("click", function () { setActive(i); });
+    });
+    if (prevBtn) prevBtn.addEventListener("click", function () { setActive(activeIndex - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { setActive(activeIndex + 1); });
+  });
+});

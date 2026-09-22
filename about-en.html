@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=14">
+<link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
 
@@ -29,12 +29,43 @@
 
   <div class="role-title">
     <h1>About Me</h1>
-    <p class="ph">[REPLACE: a short 1-2 line summary of overall experience]</p>
   </div>
 
   <section id="summary">
-    <h2>Experience Summary</h2>
-    <p class="ph">[REPLACE: overall story of the career path across media, editing, and technical writing]</p>
+    <h2>Work Experience</h2>
+    <p>I began my career in journalism and TV news, then moved into product companies in 2020, where I grew into a commercial and technical editor. I've since completed a UX writing course, and I see my path forward as a copywriter, technical writer, and commercial editor within a product company.</p>
+
+    <div class="career-timeline" id="career-timeline">
+      <button class="career-nav-btn career-nav-prev" type="button" aria-label="Previous role">‹</button>
+      <div class="career-timeline-track">
+        <div class="career-timeline-line"></div>
+        <button class="career-point active" type="button">
+          <span class="career-point-company">VK</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2023 — present</span>
+        </button>
+        <button class="career-point" type="button">
+          <span class="career-point-company">Yandex</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2022</span>
+        </button>
+        <button class="career-point" type="button">
+          <span class="career-point-company">MoySklad</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2020–2022</span>
+        </button>
+        <button class="career-point" type="button">
+          <span class="career-point-company">Media & TV</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2008–2020</span>
+        </button>
+      </div>
+      <button class="career-nav-btn career-nav-next" type="button" aria-label="Next role">›</button>
+    </div>
+
+    <p>At MoySklad (2020–2022), I worked as a product editor. I collaborated closely with product teams and helped craft in-product UI text. I wrote newsletters (Bitrix24, Unisender) and social media copy about new features. I also authored articles on the platform's capabilities, including guides on marketplace accounting and small-scale production, and maintained documentation in Confluence. Alongside this, I created interview-based publications with industry experts and built and updated landing pages.</p>
+
+    <p>Earlier in my career (2008–2020), I worked in journalism and broadcast media — at Forbes.ru, Moskva 24, 360°, VGTRK, Vechernyaya Moskva, and others — as a correspondent, reporter, and editor. I managed teams of up to 10 news editors: distributing tasks, editing copy, and overseeing publishing workflows.</p>
   </section>
 
   <section id="skills">
@@ -43,19 +74,30 @@
       <div class="skill-card">
         <h3>Product Editor</h3>
         <ul>
-          <li class="ph">[skill 1]</li>
-          <li class="ph">[skill 2]</li>
-          <li class="ph">[skill 3]</li>
+          <li>Copywriting and editing</li>
+          <li>UX writing and instructional content</li>
+          <li>In-product UI copy</li>
+          <li>Git / GitHub / Bitbucket</li>
+          <li>Markdown, HTML, XML</li>
+          <li>Oxygen XML Editor</li>
+          <li>Figma, Confluence, Jira</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3>Media Experience</h3>
         <ul>
-          <li class="ph">[where, role, how long]</li>
-          <li class="ph">[key task/format]</li>
+          <li>Forbes.ru, Moskva 24, 360°, VGTRK, Vechernyaya Moskva, and others (2008–2020)</li>
+          <li>Correspondent, reporter, editor</li>
+          <li>Managed a team of up to 10 editors</li>
+          <li>Interviewing</li>
         </ul>
       </div>
     </div>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <p>Russian — native, English — B2 (upper-intermediate).</p>
   </section>
 
 </main>
@@ -65,5 +107,6 @@
   <p>Klara Minak · About Me</p>
 </footer>
 
+<script src="script.js?v=2"></script>
 </body>
 </html>

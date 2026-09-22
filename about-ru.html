@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=14">
+<link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
 
@@ -29,12 +29,43 @@
 
   <div class="role-title">
     <h1>Обо мне</h1>
-    <p class="ph">[ЗАМЕНИТЬ: короткое саммари всего опыта, 1-2 строки]</p>
   </div>
 
   <section id="summary">
-    <h2>Саммари опыта</h2>
-    <p class="ph">[ЗАМЕНИТЬ: общий рассказ об опыте — как складывался путь между СМИ, редактурой и техническим письмом]</p>
+    <h2>Опыт работы</h2>
+    <p>Я начинала карьеру в журналистике и на телевидении, а в 2020 году перешла в продуктовые компании, где выросла до коммерческого и технического редактора. Я прошла курс по UX-райтингу и вижу свой дальнейший путь как копирайтер, технический писатель и коммерческий редактор в продуктовой компании.</p>
+
+    <div class="career-timeline" id="career-timeline">
+      <button class="career-nav-btn career-nav-prev" type="button" aria-label="Предыдущее место работы">‹</button>
+      <div class="career-timeline-track">
+        <div class="career-timeline-line"></div>
+        <button class="career-point active" type="button">
+          <span class="career-point-company">VK</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2023 — наст. время</span>
+        </button>
+        <button class="career-point" type="button">
+          <span class="career-point-company">Яндекс</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2022</span>
+        </button>
+        <button class="career-point" type="button">
+          <span class="career-point-company">МойСклад</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2020–2022</span>
+        </button>
+        <button class="career-point" type="button">
+          <span class="career-point-company">СМИ и ТВ</span>
+          <span class="career-point-dot"></span>
+          <span class="career-point-year">2008–2020</span>
+        </button>
+      </div>
+      <button class="career-nav-btn career-nav-next" type="button" aria-label="Следующее место работы">›</button>
+    </div>
+
+    <p>В компании МойСклад (2020–2022) работала продуктовым редактором. Тесно взаимодействовала с продуктовыми командами и помогала писать интерфейсные тексты. Готовила рассылки (Bitrix24, Unisender) и посты в соцсетях о новых функциях продукта. Также писала статьи о возможностях платформы — например, гайды по учёту на маркетплейсах и организации мелкосерийного производства — и вела документацию в Confluence. Помимо этого делала публикации-интервью с экспертами рынка и создавала и обновляла лендинги.</p>
+
+    <p>С 2008 по 2020 год работала в журналистике и на телевидении — Forbes.ru, «Москва 24», 360°, ВГТРК, «Вечерняя Москва» и другие — корреспондентом, репортёром и редактором. Руководила командами до 10 новостных редакторов: распределяла задачи, редактировала тексты и следила за публикационным процессом.</p>
   </section>
 
   <section id="skills">
@@ -43,19 +74,30 @@
       <div class="skill-card">
         <h3>Продуктовый редактор</h3>
         <ul>
-          <li class="ph">[навык 1]</li>
-          <li class="ph">[навык 2]</li>
-          <li class="ph">[навык 3]</li>
+          <li>Копирайтинг и редактура</li>
+          <li>UX-райтинг и инструктивный контент</li>
+          <li>Интерфейсные тексты</li>
+          <li>Git / GitHub / Bitbucket</li>
+          <li>Markdown, HTML, XML</li>
+          <li>Oxygen XML Editor</li>
+          <li>Figma, Confluence, Jira</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3>Опыт в СМИ</h3>
         <ul>
-          <li class="ph">[где, кем, сколько времени]</li>
-          <li class="ph">[ключевая задача/формат]</li>
+          <li>Forbes.ru, «Москва 24», 360°, ВГТРК, «Вечерняя Москва» и др. (2008–2020)</li>
+          <li>Корреспондент, репортёр, редактор</li>
+          <li>Руководила командой до 10 редакторов</li>
+          <li>Интервьюирование</li>
         </ul>
       </div>
     </div>
+  </section>
+
+  <section id="languages">
+    <h2>Языки</h2>
+    <p>Русский — родной, английский — B2 (upper-intermediate).</p>
   </section>
 
 </main>
@@ -65,5 +107,6 @@
   <p>Клара Минак · Обо мне</p>
 </footer>
 
+<script src="script.js?v=2"></script>
 </body>
 </html>

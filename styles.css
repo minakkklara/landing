@@ -337,6 +337,115 @@ section > h2 {
   margin-bottom: 4px;
 }
 
+/* ---------- Horizontal career timeline (About page) ---------- */
+.career-timeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0;
+}
+.career-nav-btn {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: var(--shadow-card);
+}
+.career-nav-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-edge);
+}
+.career-timeline-track {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+.career-timeline-line {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 44px;
+  height: 2px;
+  background: var(--accent-soft);
+}
+.career-point {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+.career-point-company {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 32px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+  transition: font-size .15s ease, color .15s ease;
+}
+.career-point-dot {
+  width: 11px;
+  height: 11px;
+  margin: 6px 0;
+  border-radius: 50%;
+  background: var(--border-muted);
+  border: 2px solid var(--bg);
+  transition: background .15s ease, transform .15s ease;
+}
+.career-point-year {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 18px;
+  font-size: .7rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+  transition: font-size .15s ease, color .15s ease;
+}
+.career-point.active .career-point-company {
+  font-size: 1rem;
+  color: var(--text);
+}
+.career-point.active .career-point-dot {
+  background: var(--accent);
+  transform: scale(1.4);
+}
+.career-point.active .career-point-year {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--accent-edge);
+}
+
+@media (max-width: 640px) {
+  .career-point-company { font-size: .7rem; }
+  .career-point-year { font-size: .62rem; }
+  .career-timeline { gap: 4px; }
+}
+
 /* ---------- Skills ---------- */
 .skills-grid {
   display: grid;
