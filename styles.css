@@ -463,6 +463,62 @@ section > h2 {
 .skill-card ul { margin: 0; padding-left: 20px; }
 .skill-card li { margin-bottom: 4px; }
 
+/* ---------- Additional expertise (About page) ---------- */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.expertise-card p {
+  margin: 0 0 8px;
+  color: var(--text-muted);
+}
+.expertise-card p:last-child { margin-bottom: 0; }
+.expertise-highlight {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent-edge);
+  font-weight: 600;
+  font-size: .85rem;
+}
+.expertise-card-course {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.expertise-course-info { flex: 1 1 auto; min-width: 0; }
+.expertise-course-name {
+  color: var(--text);
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.expertise-course-meta {
+  color: var(--text-muted);
+  font-size: .85rem;
+  margin: 0;
+}
+.cert-thumb {
+  flex: 0 0 auto;
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-subtle);
+  cursor: zoom-in;
+}
+
+@media (max-width: 640px) {
+  .expertise-card-course {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cert-thumb { width: 140px; height: 105px; }
+}
+
 /* ---------- Cases ---------- */
 .case-card {
   background: var(--surface);

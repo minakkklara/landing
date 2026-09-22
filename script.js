@@ -89,9 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Avatar lightbox: click the small sidebar photo to see it bigger.
+// Image lightbox: click the sidebar avatar or a certificate thumbnail to
+// see it bigger.
 document.addEventListener("DOMContentLoaded", function () {
-  var avatars = document.querySelectorAll(".toc-avatar");
+  var avatars = document.querySelectorAll(".toc-avatar, .cert-thumb");
   if (!avatars.length) return;
 
   var overlay = document.createElement("div");
