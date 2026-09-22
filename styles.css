@@ -262,6 +262,50 @@ section > h2 {
 .role-title h1 { font-size: 2rem; letter-spacing: -0.025em; }
 .role-title p { color: var(--text-muted); margin: 0; font-size: 1.05rem; }
 
+/* ---------- Experience timeline ---------- */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline-item {
+  position: relative;
+  padding-left: 28px;
+  border-left: 2px solid var(--border);
+  padding-bottom: 28px;
+}
+.timeline-item:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+.timeline-marker {
+  position: absolute;
+  left: -7px;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+.timeline-content h3 {
+  margin-bottom: 2px;
+}
+.timeline-period {
+  color: var(--text-muted);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 10px;
+}
+.timeline-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.timeline-content li {
+  margin-bottom: 4px;
+}
+
 /* ---------- Skills ---------- */
 .skills-grid {
   display: grid;
