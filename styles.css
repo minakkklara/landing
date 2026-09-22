@@ -246,7 +246,7 @@ section > h2 {
   display: block;
   width: 104px;
   height: 104px;
-  margin: 0 0 20px -28px;
+  margin: 0 0 20px -48px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: var(--shadow-card);
