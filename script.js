@@ -88,3 +88,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Avatar lightbox: click the small sidebar photo to see it bigger.
+document.addEventListener("DOMContentLoaded", function () {
+  var avatars = document.querySelectorAll(".toc-avatar");
+  if (!avatars.length) return;
+
+  var overlay = document.createElement("div");
+  overlay.className = "lightbox-overlay";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.hidden = true;
+
+  var img = document.createElement("img");
+  img.className = "lightbox-image";
+  overlay.appendChild(img);
+  document.body.appendChild(overlay);
+
+  function openLightbox(src, alt) {
+    img.src = src;
+    img.alt = alt || "";
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  avatars.forEach(function (avatar) {
+    avatar.setAttribute("tabindex", "0");
+    avatar.setAttribute("role", "button");
+    avatar.setAttribute("aria-label", (avatar.alt || "Photo") + " — open larger");
+    avatar.addEventListener("click", function () {
+      openLightbox(avatar.src, avatar.alt);
+    });
+    avatar.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(avatar.src, avatar.alt);
+      }
+    });
+  });
+
+  overlay.addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !overlay.hidden) closeLightbox();
+  });
+});

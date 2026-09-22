@@ -251,6 +251,27 @@ section > h2 {
   object-fit: cover;
   box-shadow: var(--shadow-card);
   border: 2px solid var(--surface);
+  cursor: zoom-in;
+}
+
+/* ---------- Avatar lightbox ---------- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 10, 9, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  cursor: zoom-out;
+}
+.lightbox-overlay[hidden] { display: none; }
+.lightbox-image {
+  max-width: min(440px, 90vw);
+  max-height: 85vh;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-elevated);
 }
 .toc nav {
   display: flex;
